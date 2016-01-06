@@ -1,4 +1,4 @@
-﻿'Jay Adams PSU Seat Check 2.4 SUMMER 2015 & FALL 2015
+﻿'Jay Adams PSU Seat Check 2.4
 'jja5212@psu.edu
 'Program is entirely open source feel free to do whatever with it
 'maybe give me some credit tho?? If not I won't get mad. Enjoy :)
