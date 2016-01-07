@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="psuSeatCheck.exe" size="658432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="psuSeatCheck.exe" size="658944">
       <assemblyIdentity name="psuSeatCheck" version="2.4.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KRQOkn7QbOK+gHlfMLBBB8Ef3jPXA/05FQr5CxFGhdc=</dsig:DigestValue>
+        <dsig:DigestValue>xkmk/cKv8/YWXYJVEuOnyGlroYLgMmAzvBBf1HgZPvI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -18,6 +18,8 @@ Public Class main
     Private fileDuplicateCheck As New Dictionary(Of String, String) 'used for duplicate txt file check
     Private WithEvents authenticationBrowser As New System.Windows.Forms.WebBrowser
     Public autoAdd As Boolean = false
+    Private updateHasShownToday = False
+    Private updateBoxIsShowing = False
 
     Dim userDocumentsDir As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments
     'User documents directory, independant of Windows OS version
@@ -79,10 +81,14 @@ Public Class main
         'MsgBox(Application.ExecutablePath)
         'MsgBox(Application.StartupPath)
 
+        updateHasShownToday = True
+        updateBoxIsShowing = True
+
         Dim answer As Integer = MsgBox("A newer version of Seat Check (v" & latestVersion & ") is available, you are currently running v" & VERSION & ", Do you wish to update the app?" & vbNewLine & vbNewLine & "NOTE! All course data will be preserved", MsgBoxStyle.YesNo, "Update Available")
 
         If answer = DialogResult.No Then
             'do nothing
+            updateBoxIsShowing = False
         ElseIf answer = DialogResult.Yes Then
             'proceed with update
             Try
@@ -441,6 +447,13 @@ Public Class main
                     addingCourse4 = False
                 End Sub
 
+                'Reset add function incase of two factor timeout or other error (15 second timeout)
+                Dim updateAskTimer As New System.Windows.Forms.Timer
+                updateAskTimer.Interval = (86400 * 1000) '86400 seconds * 1000 (for miliseconds. Represents 1 Day as the update re-ask timer)
+                updateAskTimer.Start()
+                AddHandler updateAskTimer.Tick, Sub()
+                    updateHasShownToday = False
+                End Sub
 
             Catch ex As System.ArgumentException
 
@@ -1303,6 +1316,10 @@ Public Class main
             End If
 
             Me.Text = "PSU Seat Check v" & VERSION & " LAST UPDATED -> " & System.DateTime.Now.ToLongTimeString
+
+            If updateHasShownToday = False and updateBoxIsShowing = false
+                checkVersion()
+            End If
 
         End If
 
