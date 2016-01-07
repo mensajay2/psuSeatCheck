@@ -101,8 +101,15 @@ Public Class main
 
         Dim webClient As New System.Net.WebClient
 
-        Dim latestVersion As Double = Double.Parse(webClient.DownloadString("http://mensajay.com/getVersion.php"))
-        Dim latestLink As String = webClient.DownloadString("http://mensajay.com/getVersion.php?download")
+        Dim latestVersion As Double
+        Dim latestLink As String
+
+        Try
+            latestVersion = Double.Parse(webClient.DownloadString("http://mensajay.com/getVersion.php"))
+            latestLink = webClient.DownloadString("http://mensajay.com/getVersion.php?download")
+        Catch ex As Exception
+
+        End Try
 
         If (latestVersion > VERSION) Then
             'there is a newer version out trigger update
@@ -163,7 +170,7 @@ Public Class main
                     Next
                 
                     Try 
-                        If IsNumeric(result1) And CInt(result1) > 0 Then
+                        If IsNumeric(result1) And Integer.Parse(result1) > 0 Then
                             If addingCourse1 = False And courseAdded1 = False And addError1.Length = 0 and autoAdd = true  Then
                                 course1Browser.Navigate(New Uri("https://webaccess.psu.edu/"))
                             End If
@@ -186,7 +193,7 @@ Public Class main
                     Next
 
                     Try
-                        If IsNumeric(result2) And CInt(result2) > 0 Then
+                        If IsNumeric(result2) And Integer.Parse(result2) > 0 Then
                             If addingCourse2 = False And courseAdded2 = False And addError2.Length = 0 and autoAdd = true  Then
                                 course2Browser.Navigate(New Uri("https://webaccess.psu.edu/"))
                             End If
@@ -209,7 +216,7 @@ Public Class main
                     Next
 
                     Try
-                        If IsNumeric(result3) And CInt(result3) > 0 Then
+                        If IsNumeric(result3) And Integer.Parse(result3) > 0 Then
                             If addingCourse3 = False And courseAdded3 = False And addError3.Length = 0 and autoAdd = true  Then
                                 course3Browser.Navigate(New Uri("https://webaccess.psu.edu/"))
                             End If
@@ -231,7 +238,7 @@ Public Class main
                     Next
 
                     Try
-                        If IsNumeric(result4) And CInt(result4) > 0 Then
+                        If IsNumeric(result4) And Integer.Parse(result4) > 0 Then
                             If addingCourse4 = False And courseAdded4 = False And addError4.Length = 0 and autoAdd = true  Then
                                 course4Browser.Navigate(New Uri("https://webaccess.psu.edu/"))
                             End If

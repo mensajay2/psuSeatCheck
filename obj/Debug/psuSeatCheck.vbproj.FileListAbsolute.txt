@@ -197,3 +197,23 @@ C:\Users\mensajay3\Desktop\psuSeatCheck2_4\obj\Debug\psuSeatCheck.vbproj.Generat
 C:\Users\mensajay3\Desktop\psuSeatCheck2_4\obj\Debug\psuSeatCheck.TrustInfo.xml
 C:\Users\mensajay3\Desktop\psuSeatCheck2_4\obj\Debug\psuSeatCheck.exe.manifest
 C:\Users\mensajay3\Desktop\psuSeatCheck2_4\obj\Debug\psuSeatCheck.application
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.exe.config
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.vbproj.ResolveComReference.cache
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.exe
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.xml
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.pdb
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.exe.manifest
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.application
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.exe
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.pdb
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\bin\Debug\psuSeatCheck.xml
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.vbprojResolveAssemblyReference.cache
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.autoAddConfig.resources
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.courseEntry.resources
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.main.resources
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.Resources.resources
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.TestBrowserForm.resources
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.vbproj.GenerateResource.Cache
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.TrustInfo.xml
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.exe.manifest
+C:\Users\mensajay3\Desktop\Random Desktop Stuff\psuSeatCheck2_4\obj\Debug\psuSeatCheck.application
