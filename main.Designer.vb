@@ -96,9 +96,9 @@ Partial Class main
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.Location = New System.Drawing.Point(94, 43)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(207, 15)
+        Me.Label2.Size = New System.Drawing.Size(214, 15)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Jay Adams - JJA5212  --- Build 2.4 ---"
+        Me.Label2.Text = "Jay Adams - JJA5212  --- Build 2.41 ---"
         '
         'Panel1
         '
@@ -479,7 +479,7 @@ Partial Class main
         Me.MinimumSize = New System.Drawing.Size(468, 500)
         Me.Name = "main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PSU Seat Check v2.4"
+        Me.Text = "PSU Seat Check v2.41"
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel1.ResumeLayout(false)
         Me.Panel1.PerformLayout

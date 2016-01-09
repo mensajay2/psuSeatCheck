@@ -1,4 +1,4 @@
-﻿'Jay Adams PSU Seat Check 2.4
+﻿'Jay Adams PSU Seat Check 2.41
 'jja5212@psu.edu
 'Program is entirely open source feel free to do whatever with it
 'maybe give me some credit tho?? If not I won't get mad. Enjoy :)
@@ -8,7 +8,7 @@
 
 Public Class main
 
-    Public VERSION As Double = 2.4 'Current app version
+    Public VERSION As Double = 2.41 'Current app version
     Public SEMESTER As String 'String which decides the semester, URL Encode the space
     Public course1Name, course2Name, course3Name, course4Name As String 'Course name strings (user input)
     Public course1, course2, course3, course4 As String 'User inputted course ID's
@@ -167,11 +167,11 @@ Public Class main
                 If course1.Length > 0 Then
 
                     'Dim result1 As String
-                    result1 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course1)
+                    result1 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course1 & "&version=" & VERSION)
 
                     For i As Integer = 1 To 10
                         If result1.Length = 0 Then
-                            result1 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course1)
+                            result1 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course1 & "&version=" & VERSION)
                         End If
                     Next
                 
@@ -190,11 +190,11 @@ Public Class main
                 If course2.Length > 0 Then
 
                     'Dim result2 As String
-                    result2 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course2)
+                    result2 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course2 & "&version=" & VERSION)
 
                     For i As Integer = 1 To 10
                         If result2.Length = 0 Then
-                            result2 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course2)
+                            result2 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course2 & "&version=" & VERSION)
                         End If
                     Next
 
@@ -213,11 +213,11 @@ Public Class main
                 If course3.Length > 0 Then
 
                     'Dim result3 As String
-                    result3 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course3)
+                    result3 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course3 & "&version=" & VERSION)
 
                     For i As Integer = 1 To 10
                         If result3.Length = 0 Then
-                            result3 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course3)
+                            result3 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course3 & "&version=" & VERSION)
                         End If
                     Next
 
@@ -235,17 +235,19 @@ Public Class main
                 If course4.Length > 0 Then
 
                     'Dim result4 As String
-                    result4 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course4)
+                    result4 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course4 & "&version=" & VERSION)
 
                     For i As Integer = 1 To 10
                         If result4.Length = 0 Then
-                            result4 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course4)
+                            result4 = webClient.DownloadString("http://mensajay.com/seatsLeft.php?semester=" & SEMESTER & "&courseID=" & course4 & "&version=" & VERSION)
                         End If
                     Next
 
                     Try
                         If IsNumeric(result4) And Integer.Parse(result4) > 0 Then
+                            Console.writeline("First conditional class 4 true")
                             If addingCourse4 = False And courseAdded4 = False And addError4.Length = 0 and autoAdd = true  Then
+                                Console.WriteLine("Second conditional class 4 true")
                                 course4Browser.Navigate(New Uri("https://webaccess.psu.edu/"))
                             End If
                         End If
@@ -935,6 +937,8 @@ Public Class main
 
         If sender Is course4Browser Then
 
+            Console.WriteLine("Course 4 browser check 1")
+
             addingCourse4 = True
 
             'Reset add function incase of two factor timeout or other error (15 second timeout)
@@ -954,18 +958,22 @@ Public Class main
                 course4Browser.Document.GetElementById("login").SetAttribute("value", autoAddConfig.username)
                 course4Browser.Document.GetElementById("password").SetAttribute("value", autoAddConfig.password)
                 course4Browser.Document.Forms.Item(0).InvokeMember("submit")
+                Console.WriteLine("Webaccess part")
             End If
 
             If Not course4Browser.IsBusy And course4Browser.Document.Url.ToString = "https://webaccess.psu.edu/services/" Then
                 course4Browser.Navigate(New Uri("https://elionvw.ais.psu.edu/cgi-bin/elion-student.exe/submit/goRegistration"))
+                Console.WriteLine("logged in ready to enroll")
             End If
 
             If Not course4Browser.IsBusy And course4Browser.Document.Url.ToString = "https://webaccess.psu.edu/?cosign-elionvw.ais.psu.edu&https://elionvw.ais.psu.edu/cgi-bin/elion-student.exe/submit/goRegistration"
+                Console.WriteLine("Two factor auth")
                 Dim twoFactorTimer As New System.Windows.Forms.Timer
                 twoFactorTimer.Interval = 500
                 twoFactorTimer.Start()
                 AddHandler twoFactorTimer.Tick, Sub()
                     twoFactorTimer.Stop()
+                    course4Browser.Document.Forms.Item(0).Children.Item(8).FirstChild.InvokeMember("click")
                 End Sub
             End If
 

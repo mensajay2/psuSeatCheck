@@ -4,7 +4,7 @@
   <description asmv2:iconFile="lion.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="psuSeatCheck" version="2.4.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="psuSeatCheck" version="2.4.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="psuSeatCheck.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="psuSeatCheck.exe" size="658944">
-      <assemblyIdentity name="psuSeatCheck" version="2.4.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="psuSeatCheck.exe" size="659968">
+      <assemblyIdentity name="psuSeatCheck" version="2.4.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xkmk/cKv8/YWXYJVEuOnyGlroYLgMmAzvBBf1HgZPvI=</dsig:DigestValue>
+        <dsig:DigestValue>xEpGrSjyXORYon6Gf7tChICp6D9Alya5AiYSH3Xxlq8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
